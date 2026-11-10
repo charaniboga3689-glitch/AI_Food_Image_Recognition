@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Dashboard | FoodVision AI</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}"></head>
+<body><div class="layout">{% set active='dashboard' %}{% include '_sidebar.html' %}
+<main class="main"><div class="topbar"><div class="crumb">FOODVISION AI <b>/ DASHBOARD</b></div><div class="user-pill"><span class="avatar">AI</span> Project Workspace</div></div>
+<h1>Project <span class="green">Dashboard</span></h1>
+<p class="page-sub">Your food recognition workspace at a glance.</p>
+<div class="stats">
+ <div class="stat"><div class="stat-top"><span>Total Predictions</span><span class="stat-icon">◎</span></div><div class="stat-number">{{ total }}</div><div class="stat-note">Images analyzed on this device</div></div>
+ <div class="stat"><div class="stat-top"><span>Average Confidence</span><span class="stat-icon">◈</span></div><div class="stat-number">{{ average }}<small style="font-size:15px">%</small></div><div class="stat-note">Average model score</div></div>
+ <div class="stat"><div class="stat-top"><span>Food Categories</span><span class="stat-icon">✦</span></div><div class="stat-number">101</div><div class="stat-note">Classes in the Food-101 dataset</div></div>
+</div>
+<div class="content-grid">
+ <section class="panel"><h2 class="panel-title">Recent predictions</h2><p class="panel-sub">Latest food images processed by the model</p>
+ {% if history %}{% for item in history %}
+ <div class="activity"><img class="food-thumb" src="{{ url_for('static', filename=item.image) }}" alt=""><div><div class="activity-name">{{ item.food }}</div><div class="activity-date">{{ item.date }}</div></div><div class="activity-score">{{ item.confidence }}%</div></div>
+ {% endfor %}{% else %}<div class="empty">No predictions yet.<br>Upload your first food image to get started.</div>{% endif %}
+ <div class="quick-actions"><a class="btn" href="/">+ Recognize Food</a><a class="btn secondary" href="/history">View History</a></div>
+ </section>
+ <section class="panel"><h2 class="panel-title">Most recognized foods</h2><p class="panel-sub">Based on your local prediction history</p>
+ {% if top_foods %}{% for name,count in top_foods %}
+ <div class="bar-row"><div class="bar-label"><span>{{ name }}</span><b>{{ count }}</b></div><div class="bar-track"><div class="bar-fill" style="width:{{ (count / total * 100) if total else 0 }}%"></div></div></div>
+ {% endfor %}{% else %}<div class="empty">Your food category analytics will appear after you make predictions.</div>{% endif %}
+ </section>
+</div>
+
+</main></div></body></html>

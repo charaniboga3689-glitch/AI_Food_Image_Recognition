@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>History | FoodVision AI</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}"></head>
+<body><div class="layout">{% set active='history' %}{% include '_sidebar.html' %}
+<main class="main"><div class="topbar"><div class="crumb">FOODVISION AI <b>/ HISTORY</b></div><div class="user-pill"><span class="avatar">AI</span> Project Workspace</div></div>
+<h1>Prediction <span class="green">History</span></h1><p class="page-sub">Review food images analyzed on this device.</p>
+<section class="table-panel">
+ {% if history %}<table><thead><tr><th>FOOD IMAGE</th><th>FOOD NAME</th><th>DATE</th><th>CONFIDENCE</th></tr></thead><tbody>
+ {% for item in history %}<tr><td><img src="{{ url_for('static', filename=item.image) }}" style="width:42px;height:42px;object-fit:cover;border-radius:8px" alt=""></td><td><b>{{ item.food }}</b></td><td>{{ item.date }}</td><td>{{ item.confidence }}%</td></tr>{% endfor %}
+ </tbody></table>{% else %}<div class="empty">No prediction history yet. <a class="green" href="/">Recognize your first food image →</a></div>{% endif %}
+</section>
+
+</main></div></body></html>

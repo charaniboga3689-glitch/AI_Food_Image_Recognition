@@ -1,0 +1,134 @@
+[
+  {
+    "food": "Tuna Tartare",
+    "confidence": 1.0,
+    "image": "uploads/dc9ecf50a5bf49489c94f50a18ed636e.jpg",
+    "date": "10 Nov 2026, 09:16 AM"
+  },
+  {
+    "food": "Chicken Curry",
+    "confidence": 89.3,
+    "calories": 340,
+    "fat_g": 16.0,
+    "health_status": "Healthy",
+    "image": "uploads/eef5431f20354c97bc67bfebfb9e7610.jpg",
+    "date": "09 Nov 2026, 10:13 PM"
+  },
+  {
+    "food": "Mushroom Curry",
+    "confidence": 89.3,
+    "calories": 185,
+    "fat_g": 9.0,
+    "health_status": "Healthy",
+    "image": "uploads/b99108be48274291ba477d107c3fd01e.jpg",
+    "date": "09 Nov 2026, 10:01 PM"
+  },
+  {
+    "food": "Chicken Wings",
+    "confidence": 71.0,
+    "calories": 380,
+    "fat_g": 24.0,
+    "health_status": "Moderate / In Moderation",
+    "image": "uploads/39dfee4cecc74785aa0b160896f9c43d.jpg",
+    "date": "09 Nov 2026, 10:01 PM"
+  },
+  {
+    "food": "Chicken Wings",
+    "confidence": 71.0,
+    "calories": 380,
+    "fat_g": 24.0,
+    "health_status": "Moderate / In Moderation",
+    "image": "uploads/969cb2372c04472a9c04f9a61dccebf0.jpg",
+    "date": "09 Nov 2026, 09:43 PM"
+  },
+  {
+    "food": "Chicken Curry",
+    "confidence": 89.3,
+    "calories": 340,
+    "fat_g": 16.0,
+    "health_status": "Healthy",
+    "image": "uploads/46498a9183bc48b6b3c98c3a3e0644b2.jpg",
+    "date": "09 Nov 2026, 09:42 PM"
+  },
+  {
+    "food": "Mushroom Curry",
+    "confidence": 89.3,
+    "calories": 185,
+    "fat_g": 9.0,
+    "health_status": "Healthy",
+    "image": "uploads/38590ba4ca184c969e1f1bb7992bad43.jpg",
+    "date": "09 Nov 2026, 09:32 PM"
+  },
+  {
+    "food": "Chicken Wings",
+    "confidence": 71.0,
+    "calories": 380,
+    "fat_g": 24.0,
+    "health_status": "Moderate / In Moderation",
+    "image": "uploads/3f7242dc3d5d4cd3b5f4de2cc02a3b4e.jpg",
+    "date": "09 Nov 2026, 09:32 PM"
+  },
+  {
+    "food": "Mushroom Curry",
+    "confidence": 71.0,
+    "calories": 185,
+    "fat_g": 9.0,
+    "health_status": "Healthy",
+    "image": "uploads/abc8c05d7c7c45779498173ef994f5b9.jpg",
+    "date": "09 Nov 2026, 09:10 PM"
+  },
+  {
+    "food": "Chicken Curry",
+    "confidence": 89.3,
+    "calories": 340,
+    "fat_g": 16.0,
+    "health_status": "Healthy",
+    "image": "uploads/344fb08e750045cb9eb5b1c00b51b23a.jpg",
+    "date": "09 Nov 2026, 09:09 PM"
+  },
+  {
+    "food": "Chicken Curry",
+    "confidence": 85.8,
+    "calories": 340,
+    "fat_g": 16.0,
+    "health_status": "Healthy",
+    "image": "uploads/be8202bf5de6417aa9b4beeaa3c6b047.jpg",
+    "date": "09 Nov 2026, 09:08 PM"
+  },
+  {
+    "food": "Chicken Curry",
+    "confidence": 89.3,
+    "calories": 340,
+    "fat_g": 16.0,
+    "health_status": "Healthy",
+    "image": "uploads/839c6cdfbbe144c3a6d19498076d3ca8.jpg",
+    "date": "09 Nov 2026, 09:03 PM"
+  },
+  {
+    "food": "Chicken Wings",
+    "confidence": 70.5,
+    "calories": 380,
+    "fat_g": 24.0,
+    "health_status": "Moderate / In Moderation",
+    "image": "uploads/d7f555748b6e4dd9afd8424e24c010ce.jpg",
+    "date": "09 Nov 2026, 08:57 PM"
+  },
+  {
+    "food": "Waffles",
+    "confidence": 1.0,
+    "image": "uploads/e79492bd5a3f4b0fa140a7680a662675.jpg",
+    "date": "09 Nov 2026, 08:35 PM"
+  },
+  {
+    "food": "Waffles",
+    "confidence": 1.0,
+    "image": "uploads/f4b1153e75b641cea0b470e3b21a2c97.jpg",
+    "date": "09 Nov 2026, 08:31 PM"
+  },
+  {
+    "food": "Waffles",
+    "confidence": 1.0,
+    "image": "uploads/36ddbfb5e3444abfb85df870d34baa28.jpg",
+    "date": "09 Nov 2026, 08:29 PM"
+  }
+]

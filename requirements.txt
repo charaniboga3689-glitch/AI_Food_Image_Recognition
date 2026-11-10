@@ -1,0 +1,5 @@
+Flask>=3.0,<4.0
+tensorflow>=2.15,<2.20
+tensorflow-datasets>=4.9,<5.0
+Pillow>=10.0
+numpy>=1.26

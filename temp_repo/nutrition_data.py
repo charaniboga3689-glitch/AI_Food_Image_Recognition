@@ -1,0 +1,17 @@
+nutrition_db = {
+    "chowmein": {"calories": 220, "protein": 6, "sugar": 3},
+    "curd_rice": {"calories": 180, "protein": 5, "sugar": 2},
+    "dosa": {"calories": 168, "protein": 4, "sugar": 0.6},
+    "donut": {"calories": 452, "protein": 4, "sugar": 25},
+    "fritter": {"calories": 150, "protein": 3, "sugar": 1},
+    "gulab_jamun": {"calories": 143, "protein": 2, "sugar": 16},
+    "ice_cream": {"calories": 207, "protein": 3.5, "sugar": 21},
+    "idli": {"calories": 58, "protein": 2, "sugar": 0.1},
+    "maggi": {"calories": 385, "protein": 8, "sugar": 2.5},
+    "pastry": {"calories": 330, "protein": 5, "sugar": 22},
+    "pizza": {"calories": 266, "protein": 11, "sugar": 3.6},
+    "sandwich": {"calories": 250, "protein": 8, "sugar": 4},
+    "veg_burger": {"calories": 295, "protein": 17, "sugar": 5},
+    "white_sauce_pasta": {"calories": 320, "protein": 9, "sugar": 3},
+    "wrap": {"calories": 240, "protein": 10, "sugar": 2},
+}

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>About Project | FoodVision AI</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}"></head>
+<body><div class="layout">{% set active='about' %}{% include '_sidebar.html' %}
+<main class="main"><div class="topbar"><div class="crumb">FOODVISION AI <b>/ ABOUT PROJECT</b></div><div class="user-pill"><span class="avatar">AI</span> Project Workspace</div></div>
+<h1>About the <span class="green">Project</span></h1><p class="page-sub">A deep learning application for recognizing food images.</p>
+<section class="panel" style="margin-bottom:17px"><h2 class="panel-title">Project overview</h2><p class="note">FoodVision AI uses transfer learning with MobileNetV2 to classify food images into one of 101 categories from the Food-101 dataset. A Flask web application allows users to upload an image and view the predicted food label, confidence score, and alternative predictions.</p>
+<div class="quick-actions"><span class="btn secondary">Python</span><span class="btn secondary">TensorFlow / Keras</span><span class="btn secondary">Flask</span><span class="btn secondary">MobileNetV2</span></div></section>
+<h2 class="panel-title" style="margin:0 0 13px">Project team · 2 members</h2>
+<div class="member-grid">
+ <div class="member"><div class="member-avatar">01</div><h3>Team Member 1</h3><p>Student name · Registration number</p></div>
+ <div class="member"><div class="member-avatar">02</div><h3>Team Member 2</h3><p>Student name · Registration number</p></div>
+</div>
+<p class="note">Replace the two placeholders with your team members' names and registration numbers before submitting the project.</p>
+
+</main></div></body></html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FoodVision AI | Food Recognition</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <nav class="navbar">
+    <a class="brand" href="/"><span class="brand-icon">✦</span> FoodVision<span>AI</span></a>
+    <div class="nav-right"><a href="/dashboard" style="color:#247b55;text-decoration:none;font-weight:700;margin-right:18px">Dashboard ↗</a><span class="status-dot"></span> AI FOOD RECOGNITION</div>
+  </nav>
+
+  <main>
+    <section class="hero">
+      <div class="eyebrow"><span>✧</span> DEEP LEARNING · COMPUTER VISION</div>
+      <h1>What's on your <em>plate?</em></h1>
+      <p class="subtitle">Upload a food photo and let AI recognize it in seconds.</p>
+      <div class="model-chip"><span>◈</span> Powered by MobileNetV2 &amp; CNN</div>
+    </section>
+
+    <section class="workspace">
+      <div class="upload-card">
+        <div class="card-heading">
+          <div><span class="step">01</span><h2>Upload your food</h2></div>
+          <span class="format">JPG · PNG · WEBP</span>
+        </div>
+        <form method="POST" enctype="multipart/form-data" id="uploadForm">
+          <label class="dropzone" for="foodImage" id="dropzone">
+            <input type="file" name="food_image" id="foodImage" accept=".jpg,.jpeg,.png,.webp" required>
+            <div class="upload-symbol">↑</div>
+            <strong id="uploadTitle">Drop your image here</strong>
+            <span id="uploadHint">or <u>browse files</u> from your device</span>
+            <span class="limit">Maximum file size: 8 MB</span>
+            <img id="preview" alt="Selected food preview">
+          </label>
+          <button type="submit" class="primary-btn" id="submitBtn">Recognize Food <span>→</span></button>
+        </form>
+        {% if error %}<div class="error-message">⚠ {{ error }}</div>{% endif %}
+      </div>
+
+      <div class="result-card">
+        <div class="card-heading">
+          <div><span class="step">02</span><h2>AI prediction</h2></div>
+          <span class="live-label"><i></i> RESULT</span>
+        </div>
+        {% if result %}
+          <div class="result-content">
+            <img class="result-image" src="{{ image_url }}" alt="Uploaded food">
+            <div class="result-kicker">FOOD IDENTIFIED</div>
+            <h3>{{ result.name }}</h3>
+            <div class="confidence-row"><span>Model confidence</span><strong>{{ result.confidence }}%</strong></div>
+            <div class="progress"><span style="width: {{ result.confidence }}%"></span></div>
+            <div class="alternatives-title">OTHER POSSIBLE MATCHES</div>
+            {% for item in result.alternatives %}
+              <div class="alternative"><span>{{ item.name }}</span><strong>{{ item.confidence }}%</strong></div>
+            {% endfor %}
+          </div>
+        {% else %}
+          <div class="empty-result">
+            <div class="plate-art"><div class="plate-inner"><span>🥗</span></div></div>
+            <h3>Your result will appear here</h3>
+            <p>Choose a clear food photo. Your AI prediction and confidence score will show in this panel.</p>
+            <div class="mini-tags"><span>101 food classes</span><span>AI powered</span></div>
+          </div>
+        {% endif %}
+      </div>
+    </section>
+
+    <section class="how-section">
+      <div class="section-label">HOW IT WORKS</div>
+      <div class="steps">
+        <div class="how-step"><b>01</b><strong>Upload</strong><p>Select a food photo from your device.</p></div>
+        <div class="how-step"><b>02</b><strong>Analyze</strong><p>MobileNetV2 analyzes image features.</p></div>
+        <div class="how-step"><b>03</b><strong>Discover</strong><p>View the predicted food and score.</p></div>
+      </div>
+    </section>
+  </main>
+  <footer><span>FoodVision AI</span> · Academic Deep Learning Project <span class="footer-right">Built with Python + Flask</span></footer>
+  <script>
+    const input = document.getElementById('foodImage');
+    const preview = document.getElementById('preview');
+    const zone = document.getElementById('dropzone');
+    const title = document.getElementById('uploadTitle');
+    const hint = document.getElementById('uploadHint');
+    input.addEventListener('change', () => {
+      const file = input.files[0];
+      if (!file) return;
+      if (file.size > 8 * 1024 * 1024) {
+        alert('Please choose an image smaller than 8 MB.');
+        input.value = '';
+        return;
+      }
+      preview.src = URL.createObjectURL(file);
+      preview.style.display = 'block';
+      title.textContent = file.name;
+      hint.textContent = 'Image selected — ready to recognize';
+      zone.classList.add('has-image');
+    });
+    ['dragenter','dragover'].forEach(evt => zone.addEventListener(evt, e => {
+      e.preventDefault(); zone.classList.add('dragging');
+    }));
+    ['dragleave','drop'].forEach(evt => zone.addEventListener(evt, e => {
+      e.preventDefault(); zone.classList.remove('dragging');
+    }));
+    zone.addEventListener('drop', e => {
+      if (e.dataTransfer.files.length) {
+        input.files = e.dataTransfer.files;
+        input.dispatchEvent(new Event('change'));
+      }
+    });
+    document.getElementById('uploadForm').addEventListener('submit', () => {
+      const btn = document.getElementById('submitBtn');
+      btn.innerHTML = 'Analyzing image… <span>✦</span>';
+      btn.disabled = true;
+    });
+  </script>
+</body>
+</html>
